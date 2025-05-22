@@ -12,7 +12,8 @@ Databases (e.g., RDS, DynamoDB)
 
 Networking, AI/ML, security, analytics, and more
 
-🔑 Key Features of AWS
+***Key Features of AWS***
+
 Pay-as-you-go pricing
 
 Highly scalable and reliable
@@ -37,7 +38,6 @@ Integrate with other AWS services (Lambda, Lex, S3, etc.)
 
 **Key Components of Amazon Connect**
 
-Component	Description
 
 Instance	- The main setup of your contact center
 
@@ -65,12 +65,16 @@ Sales and lead generation teams
 
 **Why Use Amazon Connect?**
 
-Benefit	Description
-💡 Easy Setup	Launch your call center in minutes
-💰 Cost-effective	Pay only for usage – no licenses or long-term contracts
-🌎 Scalable	Support agents across regions or remote locations easily
-🔌 Integrates Well	Seamless integration with AWS services (Lex, Lambda, DynamoDB, etc.)
-🤖 AI Ready	Add chatbots, real-time sentiment analysis, and automation with ease
+💡 Easy Setup	Launch your call center in minutes.
+
+💰 Cost-effective	Pay only for usage – no licenses or long-term contracts.
+
+🌎 Scalable	Support agents across regions or remote locations easily.
+
+🔌 Integrates Well	Seamless integration with AWS services (Lex, Lambda, DynamoDB, etc.).
+
+🤖 AI Ready	Add chatbots, real-time sentiment analysis, and automation with ease.
+
 
 📚 **What You’ll Learn in This Training Series**
 
@@ -84,5 +88,5 @@ Test internal calling and queues
 
 Integrate Lambda functions for dynamic routing
 
-Use Amazon Q for AI assisted support
+Configuring Amazon Q for AI assisted support
 
