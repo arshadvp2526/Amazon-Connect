@@ -38,13 +38,20 @@ Integrate with other AWS services (Lambda, Lex, S3, etc.)
 **Key Components of Amazon Connect**
 
 Component	Description
-Instance	The main setup of your contact center
+
+Instance	- The main setup of your contact center
+
 CCP	Contact Control Panel – the interface agents use to handle contacts
-Contact Flow	Visual tool to create IVRs and call routing logic
-Queues	Hold contacts until an agent becomes available
-Routing Profile	Defines which queues and channels each agent can handle
-Phone Numbers	For inbound/outbound calls – claimed within the instance
-Quick Connects	Shortcuts for transfers to agents, flows, or external numbers
+
+Contact Flow	- Visual tool to create IVRs and call routing logic
+
+Queues	- Hold contacts until an agent becomes available
+
+Routing Profile	- Defines which queues and channels each agent can handle
+
+Phone Numbers	- For inbound/outbound calls – claimed within the instance
+
+Quick Connects	- Shortcuts for transfers to agents, flows, or external numbers
 
 🛠️ **Common Use Cases**
 
