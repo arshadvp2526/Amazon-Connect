@@ -84,9 +84,4 @@ Set up queues, agents, routing profiles, and contact flows
 
 Design IVRs using the visual contact flow editor
 
-Test internal calling and queues
-
-Integrate Lambda functions for dynamic routing
-
-Configuring Amazon Q for AI assisted support
 
