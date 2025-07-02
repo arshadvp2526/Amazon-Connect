@@ -29,6 +29,7 @@ Real-time performance insights
 — all through a web-based console.
 
 **Key Components of Amazon Connect Cloud Contact Centre**
+
 **Component	Description**
 
 Contact Flows	Drag-and-drop workflows that determine how customer calls/chats are handled
@@ -41,6 +42,7 @@ Real-time Metrics	Live dashboard showing agent activity, queue status, and perfo
 Historical Reports	Detailed analysis of contact trends, agent productivity, and system usage
 
 **Features of Amazon Connect Cloud Contact Centre**
+
 **Feature	Benefit**
 
 Cloud-Based Access	Accessible from any browser; agents can work remotely
@@ -55,15 +57,21 @@ Secure and Compliant	Built on AWS’s secure infrastructure with role-based acce
 How It Works – Example Scenario
 A customer dials your Amazon Connect number.
 
+
 The system activates a contact flow that plays a welcome message and presents options.
+
 
 Based on input, the customer is routed to the correct queue.
 
+
 The system finds an available agent using routing profiles.
+
 
 The call connects to the agent, and the conversation is monitored, recorded, or transcribed if enabled.
 
+
 Supervisors can view real-time metrics and generate reports later.
+
 
 **Bonus:** You can add chatbots, schedule call-backs, or integrate the system with databases and CRMs to make it more intelligent.
 
