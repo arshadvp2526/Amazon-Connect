@@ -1,4 +1,4 @@
-What is a Cloud Contact Centre?
+**What is a Cloud Contact Centre?**
 A cloud contact centre is a modern customer service solution hosted entirely on the internet (cloud), rather than through on-site telephony hardware and software. It allows businesses to:
 
 Handle inbound and outbound communications (calls, chat, emails)
@@ -25,8 +25,8 @@ CRM integrations
 Real-time performance insights
 — all through a web-based console.
 
-🧩 Key Components of Amazon Connect Cloud Contact Centre
-Component	Description
+**Key Components of Amazon Connect Cloud Contact Centre**
+**Component	Description**
 Contact Flows	Drag-and-drop workflows that determine how customer calls/chats are handled
 Queues	Hold customer interactions until an agent becomes available
 Routing Profiles	Define how interactions are routed to agents based on skills or availability
@@ -36,7 +36,7 @@ Amazon Lex Integration	Chatbot service to automate interactions using natural la
 Real-time Metrics	Live dashboard showing agent activity, queue status, and performance
 Historical Reports	Detailed analysis of contact trends, agent productivity, and system usage
 
-🚀 Features of Amazon Connect Cloud Contact Centre
+**Features of Amazon Connect Cloud Contact Centre**
 Feature	Benefit
 Cloud-Based Access	Accessible from any browser; agents can work remotely
 Omnichannel Support	Supports both voice calls and chat within one interface
@@ -46,7 +46,8 @@ AI and Automation	Use Amazon Lex for self-service, Contact Lens for speech analy
 CRM Integration	Easily connect with Salesforce, Zendesk, and other third-party apps
 Secure and Compliant	Built on AWS’s secure infrastructure with role-based access and data protection
 
-📊 How It Works – Example Scenario
+**
+How It Works – Example Scenario**
 A customer dials your Amazon Connect number.
 
 The system activates a contact flow that plays a welcome message and presents options.
@@ -59,9 +60,10 @@ The call connects to the agent, and the conversation is monitored, recorded, or 
 
 Supervisors can view real-time metrics and generate reports later.
 
-🧠 Bonus: You can add chatbots, schedule call-backs, or integrate the system with databases and CRMs to make it more intelligent.
+**Bonus:** You can add chatbots, schedule call-backs, or integrate the system with databases and CRMs to make it more intelligent.
 
-🔐 Security & Compliance
+**Security & Compliance**
+
 Amazon Connect leverages AWS’s enterprise-level security framework:
 
 End-to-end encryption
@@ -72,7 +74,8 @@ Logging with AWS CloudTrail
 
 Complies with standards like PCI DSS, HIPAA, GDPR, FedRAMP, etc.
 
-💸 Pricing Model
+**Pricing Model**
+
 Amazon Connect follows a pay-as-you-go pricing model:
 
 No upfront fees or licensing costs
@@ -90,7 +93,7 @@ Additional services (e.g., Lex, Lambda)
 🎯 Use Cases
 Customer Support (e.g., online retailers, banks, tech support)
 
-Appointment Booking (e.g., clinics, vaccination centres)
+Appointment Booking (e.g., clinics, hospitals)
 
 Order Tracking & Returns
 
@@ -98,7 +101,7 @@ IT Helpdesks
 
 Government Helplines or Disaster Relief Hotlines
 
-🧑‍💼 Who Benefits from Using It?
+**Who Benefits from Using It?**
 Role	Benefit
 Agents	Intuitive interface, can work remotely
 Supervisors	Real-time monitoring, alerts, reporting
