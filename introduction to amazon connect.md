@@ -1,4 +1,5 @@
 **What is a Cloud Contact Centre?**
+
 A cloud contact centre is a modern customer service solution hosted entirely on the internet (cloud), rather than through on-site telephony hardware and software. It allows businesses to:
 
 Handle inbound and outbound communications (calls, chat, emails)
@@ -9,7 +10,9 @@ Scale operations with minimal infrastructure
 
 Amazon Connect is Amazon Web Services' (AWS) cloud-based contact centre platform, designed to help businesses create efficient, intelligent, and cost-effective customer service experiences.
 
-💡 What is Amazon Connect Cloud Contact Centre?
+
+What is Amazon Connect Cloud Contact Centre?
+
 Amazon Connect is a fully managed, pay-as-you-go cloud contact centre service. It enables businesses to deliver seamless customer experiences through voice and chat without investing in traditional contact centre infrastructure.
 
 It brings together:
@@ -46,8 +49,8 @@ AI and Automation	Use Amazon Lex for self-service, Contact Lens for speech analy
 CRM Integration	Easily connect with Salesforce, Zendesk, and other third-party apps
 Secure and Compliant	Built on AWS’s secure infrastructure with role-based access and data protection
 
-**
-How It Works – Example Scenario**
+
+How It Works – Example Scenario
 A customer dials your Amazon Connect number.
 
 The system activates a contact flow that plays a welcome message and presents options.
@@ -62,6 +65,7 @@ Supervisors can view real-time metrics and generate reports later.
 
 **Bonus:** You can add chatbots, schedule call-backs, or integrate the system with databases and CRMs to make it more intelligent.
 
+
 **Security & Compliance**
 
 Amazon Connect leverages AWS’s enterprise-level security framework:
@@ -73,6 +77,7 @@ IAM roles for agent/admin permissions
 Logging with AWS CloudTrail
 
 Complies with standards like PCI DSS, HIPAA, GDPR, FedRAMP, etc.
+
 
 **Pricing Model**
 
