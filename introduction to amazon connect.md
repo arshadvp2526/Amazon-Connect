@@ -55,6 +55,7 @@ Secure and Compliant	Built on AWS’s secure infrastructure with role-based acce
 
 
 How It Works – Example Scenario
+
 A customer dials your Amazon Connect number.
 
 
