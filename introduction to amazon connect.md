@@ -30,6 +30,7 @@ Real-time performance insights
 
 **Key Components of Amazon Connect Cloud Contact Centre**
 **Component	Description**
+
 Contact Flows	Drag-and-drop workflows that determine how customer calls/chats are handled
 Queues	Hold customer interactions until an agent becomes available
 Routing Profiles	Define how interactions are routed to agents based on skills or availability
@@ -40,7 +41,8 @@ Real-time Metrics	Live dashboard showing agent activity, queue status, and perfo
 Historical Reports	Detailed analysis of contact trends, agent productivity, and system usage
 
 **Features of Amazon Connect Cloud Contact Centre**
-Feature	Benefit
+**Feature	Benefit**
+
 Cloud-Based Access	Accessible from any browser; agents can work remotely
 Omnichannel Support	Supports both voice calls and chat within one interface
 Self-Service Configuration	No need for advanced coding; build contact flows with a visual editor
@@ -107,6 +109,7 @@ IT Helpdesks
 Government Helplines or Disaster Relief Hotlines
 
 **Who Benefits from Using It?**
+
 Role	Benefit
 Agents	Intuitive interface, can work remotely
 Supervisors	Real-time monitoring, alerts, reporting
