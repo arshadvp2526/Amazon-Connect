@@ -239,11 +239,17 @@ Organizations with massive existing legacy infrastructure they can’t abandon y
 However, even these companies are now shifting to hybrid models, using cloud for front-line services while retaining back-end legacy systems.
 
 🧠 Summary
-Cloud Contact Centre	On-Premise Contact Centre
-Agile, scalable, remote-ready	Rigid, complex, location-bound
-Lower upfront cost, pay-as-you-go	High CapEx and maintenance burden
-AI-ready, fast to integrate	Slower, more effort for updates
-Ideal for modern businesses of any size	Only suited for very specific legacy needs
+
+**Cloud Contact Centre	**                                                        ** On-Premise Contact Centre**
+
+Agile, scalable, remote-ready	                                                 Rigid, complex, location-bound
+
+Lower upfront cost, pay-as-you-go	                                             High CapEx and maintenance burden
+
+AI-ready, fast to integrate	                                                   Slower, more effort for updates                    
+
+Ideal for modern businesses of any size	                                       Only suited for very specific legacy needs
+
 
 Amazon Connect leads this shift by offering an intuitive, secure, and fully managed cloud contact centre solution that grows with your business.
 
