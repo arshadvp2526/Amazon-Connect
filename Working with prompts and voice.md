@@ -96,3 +96,85 @@ Dynamically speak order numbers, names, or estimated wait times.
 ---
 
 With Amazon Connect, you can balance TTS speed and flexibility with the polish of pre-recorded prompts, creating a seamless and scalable voice experience.
+
+
+
+
+
+## 📚 **Topic: Applying Prompts in Scripts**
+
+In Amazon Connect, once prompts are created or imported (via audio files or TTS), they can be applied within contact flows using **“Play prompt”** blocks. These scripts define how and when the audio messages are delivered to the customer or agent during the call journey.
+
+---
+
+## 🧱 **1. Using the “Play Prompt” Block
+
+**🎯 Purpose:**  
+To play a message — either a pre-recorded file or dynamic text — at any point in the customer interaction.
+
+**🔧 Configurable Options:**
+- Choose **pre-recorded prompt** from your prompt library
+- Use **text-to-speech (TTS)** with Amazon Polly
+- Insert **contact attributes** (e.g., name, queue wait time)
+- Enable **SSML** tags for speech customization
+
+---
+
+## 🗣️ **2. Where Prompts Are Typically Applied in Scripts**
+
+| **Use Case**               | **Block Type**         | **Prompt Purpose**                            |
+|----------------------------|------------------------|-----------------------------------------------|
+| Welcome Message            | Play Prompt            | Greet the caller when they connect            |
+| IVR Menu Options           | Play Prompt            | “Press 1 for Sales, 2 for Support...”         |
+| Queue Hold Message         | Customer Queue Flow    | Reassure customer while they wait             |
+| Error or Invalid Input     | Play Prompt            | “Sorry, I didn’t understand that.”            |
+| Whisper Flow to Agent      | Whisper Flow           | Alert agent with caller info                  |
+| Callback Confirmation      | Play Prompt            | “You’ll receive a call shortly.”              |
+| Post-call Thank You        | Play Prompt            | End call with a polite closing message        |
+
+---
+
+## 🧩 **3. Using Attributes in Prompts**
+
+You can personalize prompts using **contact attributes** within TTS.
+
+**Example:**
+
+```text
+Hello, {CustomerName}. Your order number is {OrderID}.
+Use these dynamic values inside Play Prompt blocks with text-to-speech enabled. The values must be set earlier in the contact flow using:
+
+Set Contact Attributes
+
+Invoke AWS Lambda
+
+Customer input blocks
+
+✨ 4. Enhancing Prompts with SSML (Speech Synthesis Markup Language)
+Amazon Polly supports SSML, which allows you to control:
+
+Pauses: <break time="1s"/>
+
+Emphasis: <emphasis level="strong">important</emphasis>
+
+Speech rate & pitch
+
+Language switching
+
+Example:
+Hello <emphasis>John</emphasis>. Your balance is <break time="500ms"/> $245.
+Use this format when configuring the text in a TTS-enabled Play Prompt block (check the "Use SSML" box).
+
+📋 Best Practices for Applying Prompts
+✅ Use short, clear, and friendly messages
+
+✅ Avoid long menus; break complex flows into subflows
+
+✅ Combine static prompts with TTS where personalization is needed
+
+✅ Always test your flow to ensure prompts play at the correct point
+
+✅ Store and reuse prompts to maintain consistency across flows
+
+Applying prompts correctly in Amazon Connect ensures that your contact flows sound natural, are easy to navigate, and deliver the right information to both customers and agents at the right time.
+
