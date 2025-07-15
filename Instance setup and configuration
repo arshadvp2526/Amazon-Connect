@@ -120,3 +120,263 @@ Creating an Amazon Connect instance is a quick but essential step that sets the 
 
 Once deployed, you can manage and scale the instance entirely through the Amazon Connect web console or APIs.
 
+# 🛡️ Understanding User Hierarchy & Security Profiles  
+## 📦 Module: Instance Setup & Configuration – Amazon Connect
+
+Amazon Connect uses a **role-based access model** to control what each user can view and do within the contact centre. This topic explains the **user hierarchy**, **security profiles**, and **permissions** that determine access within an Amazon Connect instance.
+
+---
+
+## 🧑‍💼 1. Who Are the Users?
+
+There are three primary user types in Amazon Connect:
+
+| Role         | Description                                                           |
+|--------------|------------------------------------------------------------------------|
+| **Agent**     | Handles inbound/outbound customer interactions via the Connect interface |
+| **Supervisor**| Monitors queues, agent activity, and live metrics                      |
+| **Admin**     | Manages setup, users, contact flows, routing, analytics, and integrations |
+
+These roles are **not hard-coded** — they are assigned via **Security Profiles**.
+
+---
+
+## 🔐 2. What Are Security Profiles?
+
+Security profiles are **permission sets** that define what actions a user can perform.  
+Every user must be assigned **at least one** security profile.
+
+### ✅ Key Points:
+- Users can belong to **multiple profiles**, but their **highest level of permission** applies
+- Profiles include **default templates** and can be **customized** as needed
+- Permissions cover areas like:  
+  - Contact control (make/receive calls)  
+  - Access to flows, queues, reports  
+  - User management  
+  - System settings
+
+---
+
+## 🧩 3. Default Security Profiles (Built-In)
+
+| Profile Name       | Intended For       | Key Permissions                                  |
+|--------------------|--------------------|--------------------------------------------------|
+| **Admin**           | System Admin       | Full access to all Amazon Connect features       |
+| **Call Center Manager**| Supervisors    | Monitor queues, access reports, limited config   |
+| **Quality Analyst** | QA Team            | Access to recordings, evaluations, transcripts   |
+| **Agent**           | Frontline Agent    | Make/receive calls, view personal dashboard      |
+| **Agent - Basic**   | Limited Agent      | Minimal access — basic call handling only        |
+| **HR Profile**      | HR Users (optional)| View user metrics without interaction permissions|
+
+---
+
+## 🛠️ 4. Creating & Editing Security Profiles
+
+To view or edit security profiles:
+
+1. Go to **Amazon Connect Admin Console**  
+2. Navigate to **Users > Security Profiles**  
+3. Click **"Create Profile"** or select an existing one to modify  
+4. Define permissions by checking or unchecking the boxes for each category:
+   - Routing
+   - Users
+   - Metrics & Reports
+   - Contact Control Panel (CCP)
+   - Recordings, Transcripts, etc.
+5. Save and assign this profile to users
+
+---
+
+## 🧭 5. Assigning Users to Profiles
+
+When creating a user:
+
+- Select their **Security Profile(s)**
+- Assign their **Routing Profile**
+- Choose the **Queue(s)** they should be associated with
+- Assign their **Hierarchy Group** (optional, explained below)
+
+> 🔑 You can also import users in bulk using CSV upload via the Admin Console.
+
+---
+
+## 🧱 6. Hierarchy Groups (Organizational Structure)
+
+Hierarchy groups are **optional**, but useful for organizing users:
+
+| Feature              | Description                                                    |
+|----------------------|----------------------------------------------------------------|
+| **Hierarchy Groups** | Allow logical grouping of users based on business units, teams |
+| **Use Cases**        | Assign team leads, filter reports by team, apply access limits |
+| **Levels**           | You can create multi-level groups (e.g., Region → Department → Team)|
+
+Example:
+
+Global Support
+├── India Region
+│ ├── Sales Team
+│ └── Technical Support
+└── US Region
+└── Escalation Team
+
+
+---
+
+## 📊 7. Practical Example – How It All Connects
+
+Let’s say you're onboarding a new support agent:
+
+| Step                             | Action                                                  |
+|----------------------------------|----------------------------------------------------------|
+| 1. Create user                   | In Admin Console or via SSO/SAML                        |
+| 2. Assign security profile       | Use “Agent” or “Agent - Basic”                          |
+| 3. Assign routing profile        | Maps to queues and channels (e.g., Voice + Chat)        |
+| 4. Assign to hierarchy group     | Optional — e.g., under "India → Support → Level 1"      |
+
+---
+
+## 🧠 Summary
+
+| Concept            | Purpose                                                          |
+|--------------------|------------------------------------------------------------------|
+| Users              | Agents, Supervisors, Admins who access Amazon Connect            |
+| Security Profiles  | Define user capabilities across flows, metrics, recordings, etc. |
+| Hierarchy Groups   | Organize users logically by region, department, or teams         |
+| Routing Profiles   | Control how contacts are assigned to agents                      |
+
+A well-structured user hierarchy with the right security profiles ensures:
+
+- Data privacy and role separation
+- Easy user management and auditing
+- Efficient routing and reporting
+
+
+
+
+# 🔁 Setting Up Routing Profiles and Agent Hierarchies  
+## 📦 Module: Instance Setup & Configuration – Amazon Connect
+
+To ensure customers are connected to the right agents quickly and efficiently, Amazon Connect uses **routing profiles** and **agent hierarchies**. This topic covers how to configure them for optimized contact handling.
+
+---
+
+## 🧭 1. What is a Routing Profile?
+
+A **Routing Profile** defines:
+- **Which channels** (voice, chat, tasks) an agent handles
+- **Which queues** they are assigned to
+- The **priority and order** in which contacts are routed to the agent
+
+> ✅ It is essential for directing customer contacts to the right agents based on skill, availability, and workload.
+
+---
+
+## 🧩 2. Key Components of a Routing Profile
+
+| Component          | Description                                                       |
+|--------------------|-------------------------------------------------------------------|
+| **Channels**        | Voice, Chat, and Tasks (can enable one or all)                   |
+| **Queues**          | The customer-facing queues the agent will receive contacts from  |
+| **Priority Order**  | Which queue’s contacts get routed first when multiple are active |
+| **Concurrency**     | How many contacts an agent can handle simultaneously             |
+
+---
+
+## 🛠️ 3. How to Create a Routing Profile
+
+### 📍 Step-by-Step:
+
+1. Go to **Amazon Connect Admin Console**
+2. Navigate to **Routing → Routing Profiles**
+3. Click **“Create Routing Profile”**
+
+### Fill in the details:
+
+| Field                 | Example                             |
+|------------------------|-------------------------------------|
+| Name                   | `Support-Voice-Chat`                |
+| Description            | Routing profile for Tier 1 support  |
+| Channels Enabled       | Voice, Chat                         |
+| Max Concurrency        | 1 (Voice), 3 (Chat)                 |
+| Default Outbound Queue | Select an outbound queue            |
+| Queues                 | Add one or more (e.g., “Billing”, “Tech Support”)|
+| Queue Order            | Drag-and-drop to prioritize queues  |
+
+4. Click **Save**  
+5. Assign this profile to the relevant agents
+
+---
+
+## 👥 4. Assigning Routing Profiles to Agents
+
+When creating or editing a user:
+- Select the **appropriate routing profile**
+- Ensure the user also has:
+  - A **Security Profile**
+  - Assigned **Hierarchy Group** (optional)
+
+---
+
+## 🧱 5. Agent Hierarchies
+
+Agent hierarchy helps in **organizing agents** for:
+- **Team-based performance tracking**
+- **Queue-based routing**
+- **Supervisor visibility and reporting**
+
+You configure agent hierarchy via **Hierarchy Groups**:
+
+| Level           | Example                         |
+|------------------|---------------------------------|
+| Level 1          | Region: India, US, Europe       |
+| Level 2          | Department: Sales, Support      |
+| Level 3          | Team: Tier 1, Escalation        |
+
+> Amazon Connect supports **multi-level hierarchies** to reflect real-world org structures.
+
+---
+
+## 🗂️ 6. Use Case Example
+
+### Scenario: Global Support Team
+
+| Role        | Hierarchy             | Routing Profile        |
+|-------------|------------------------|-------------------------|
+| Rahul       | India → Support → L1   | `Support-Voice-Chat`    |
+| Jane        | US → Sales → Escalation| `Sales-Voice`           |
+| Priya       | India → Support → L2   | `Support-Voice`         |
+
+- Rahul receives voice/chat from Tier 1 support queues  
+- Priya receives higher priority voice calls from L2 queues  
+- Jane handles only voice from Sales queue  
+
+---
+
+## 🎯 Best Practices
+
+- Create **separate profiles** for:
+  - Voice-only agents
+  - Chat-only agents
+  - Omnichannel agents
+- Set **concurrency limits** carefully (e.g., chat concurrency = 3, voice = 1)
+- Use **hierarchies** to assign supervisors and filter reports
+- Keep profile names descriptive and consistent (e.g., `Voice-Sales-L1`, `Chat-Support-Tier2`)
+
+---
+
+## 🧠 Summary
+
+| Element           | Purpose                                                        |
+|-------------------|----------------------------------------------------------------|
+| Routing Profile   | Defines channels, queues, and concurrency for agents           |
+| Agent Hierarchy   | Organizes agents by team, department, or geography             |
+| Queue Priority    | Determines which contact types agents receive first            |
+| Integration Point | Linked during user creation and used for reporting and routing |
+
+Proper setup of routing profiles and agent hierarchy ensures:
+- Contacts reach the right agent quickly
+- Load is balanced across teams
+- Supervisors can monitor and manage performance effectively
+
+
+
