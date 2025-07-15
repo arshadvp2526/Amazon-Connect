@@ -1,4 +1,4 @@
-# 🔊 **Amazon Connect – Working with Prompts and Voice Module**
+**Working with prompts and voice:**
 
 ## 📚 **Topic: Importing and Recording Prompts**
 
