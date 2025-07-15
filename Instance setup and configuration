@@ -496,4 +496,74 @@ Claimed numbers are the foundation for voice communication in Amazon Connect. Th
 
 
 
+# 🕒 **Setting Business Hours in Amazon Connect**  
+## 📦 **Module: Instance Setup & Configuration**
+
+Business hours in Amazon Connect define the **time windows during which your contact centre is open**. They are used to create **smart contact flows** that can handle calls differently based on whether the centre is open, closed, or during holidays.
+
+---
+
+## 🧭 **1. What Are Business Hours?**
+
+Business hours are configuration sets that determine:
+
+- When agents are available to take calls/chats
+- When to trigger out-of-office messages or holiday flows
+- How routing decisions are made in contact flows
+
+> Amazon Connect lets you define **multiple business hours profiles** for different teams, departments, or time zones.
+
+---
+
+## 🗓️ **2. Use Cases**
+
+| **Use Case**                                 | **Example**                            |
+|----------------------------------------------|----------------------------------------|
+| General support team working 9–5             | Route calls only during working hours  |
+| Different shifts for global teams            | Create separate profiles for each team |
+| After-hours voicemail or callback option     | Trigger alternative flows post-hours   |
+| Special routing during holidays or weekends  | Skip queues or play holiday messages   |
+
+---
+
+## 🛠️ **3. How to Set Up Business Hours**
+
+### 📍 **Step-by-Step:**
+
+1. Go to **Amazon Connect Admin Console**
+2. Navigate to **Routing > Hours of Operation**
+3. Click **“Add hours of operation”**
+
+### **Configuration Fields:**
+
+| **Field**            | **Example**                         |
+|----------------------|-------------------------------------|
+| **Name**             | `SupportTeam-Weekdays-9to6`         |
+| **Time Zone**        | `Asia/Kolkata`, `US/Eastern`, etc.  |
+| **Days & Times**     | Select days (e.g., Mon–Fri) and working hours (e.g., 09:00–18:00) |
+| **Description**      | `Weekday hours for Level 1 Support` |
+
+4. Click **Save**
+
+You can now use this profile in **Contact Flows**.
+
+---
+
+## 🔁 **4. Using Business Hours in Contact Flows**
+
+In the **Contact Flow editor**, you can use the **"Check hours of operation"** block to:
+
+- Route customers differently during closed hours
+- Redirect to voicemail or callback queues
+- Play out-of-office greetings
+
+### 💡 Example Flow Logic:
+
+```text
+IF within business hours (9:00–18:00) ➝ Route to support queue  
+ELSE ➝ Play after-hours message ➝ Offer callback option  
+
+
+
+
 
