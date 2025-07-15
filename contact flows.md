@@ -1,6 +1,6 @@
+# 🔄 **Amazon Connect – Contact Flows Module**
 
-
-## 📚 **Types of Flows in Amazon Connect**
+## 📚 **Topic: Types of Flows in Amazon Connect**
 
 Amazon Connect offers multiple flow types to handle different stages of customer interactions. Each flow is triggered based on where the customer is in their journey — from initial contact to call routing, waiting, or post-interaction handling.
 
@@ -29,8 +29,8 @@ A customer calls your number → Hears greeting → Presses 2 for billing → Ro
 Triggered while a customer is waiting in queue after being routed by the Contact Flow.
 
 **📌 Used For:**
-- Playing announcements
-- Providing estimated wait times
+- Playing announcements  
+- Providing estimated wait times  
 - Offering callbacks or alternatives
 
 **⏳ Example Use Case:**  
@@ -44,7 +44,7 @@ Triggered while a customer is waiting in queue after being routed by the Contact
 Plays when the **agent** puts the customer on hold during an active conversation.
 
 **📌 Used For:**
-- Playing hold music
+- Playing hold music  
 - Sharing helpful info (e.g., “Stay tuned while we pull up your details”)
 
 **🎧 Example Use Case:**  
@@ -58,8 +58,8 @@ The agent places the call on hold → Music or custom message plays for the cust
 Plays to the **agent** before they accept the inbound interaction — not heard by the customer.
 
 **📌 Used For:**
-- Sharing customer context
-- VIP alerts
+- Sharing customer context  
+- VIP alerts  
 - Preferred language or script cue
 
 **👂 Example Use Case:**  
@@ -73,7 +73,7 @@ Plays to the **agent** before they accept the inbound interaction — not heard 
 Plays to the **agent** when making outbound calls using Amazon Connect.
 
 **📌 Used For:**
-- Presenting script prompts
+- Presenting script prompts  
 - Displaying customer history before the call connects
 
 **📤 Example Use Case:**  
@@ -95,14 +95,8 @@ Plays to the **agent** when making outbound calls using Amazon Connect.
 
 ## ✅ **Best Practices**
 
-- 🌀 **Re-use flow blocks** across types to keep things DRY (Don't Repeat Yourself)
-- 🗣️ Use **dynamic attributes** like customer name or issue to personalize whisper flows
-- 🎼 Choose music or messages that reduce anxiety during queue/hold
-- 🧠 Use **Lambda and Contact Attributes** to pass data across flow types
+- 🌀 **Re-use flow blocks** across types to keep things DRY (Don't Repeat Yourself)  
+- 🗣️ Use **dynamic attributes** like customer name or issue to personalize whisper flows  
+- 🎼 Choose music or messages that reduce anxiety during queue/hold  
+- 🧠 Use **Lambda and Contact Attributes** to pass data across flow types  
 - 🔄 Always **test flows** using the built-in Contact Flow test simulator
-
----
-
-You’re ready to build these flows in your Amazon Connect dashboard.
-
-Let’s move to the next topic whenever you're ready!
