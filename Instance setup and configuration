@@ -379,4 +379,121 @@ Proper setup of routing profiles and agent hierarchy ensures:
 - Supervisors can monitor and manage performance effectively
 
 
+# ☎️ **Claiming Phone Numbers in Amazon Connect**  
+## 📦 **Module: Instance Setup & Configuration**
+
+Phone numbers are the entry point to your contact centre. Amazon Connect allows you to claim **DID (Direct Inward Dialing)** and **Toll-Free** numbers, which customers use to initiate voice contact.
+
+This topic explains how to claim numbers, the types available, and how they integrate with contact flows.
+
+---
+
+## 📞 **1. Types of Phone Numbers**
+
+| **Type**        | **Description**                                                                             |
+|-----------------|---------------------------------------------------------------------------------------------|
+| **DID (Direct Inward Dialing)** | Regular geographic numbers; may be local to a region or city               |
+| **Toll-Free**                  | Free for customers to call; typically starts with prefixes like 800, 888, 1800, etc. |
+
+> 📝 Availability of number types varies by **country and AWS region**.
+
+---
+
+## 🌐 **2. Supported Countries**
+
+Amazon Connect supports phone numbers in many countries including:
+- 🇺🇸 United States
+- 🇬🇧 United Kingdom
+- 🇮🇳 India
+- 🇨🇦 Canada
+- 🇦🇺 Australia  
+... and more.
+
+> ⚠️ In some countries, additional documents or approval may be required to claim numbers (e.g., India, UAE).
+
+---
+
+## 🛠️ **3. How to Claim a Phone Number**
+
+### 📍 **Step-by-Step:**
+
+1. Go to the **Amazon Connect Admin Console**
+2. Navigate to **“Phone Numbers”**
+3. Click **“Claim a number”**
+
+### **Fill in the details:**
+
+| **Field**           | **Example**                       |
+|---------------------|-----------------------------------|
+| **Country**         | India, United States, etc.        |
+| **Type**            | DID or Toll-Free                  |
+| **Description**     | `Support-TollFree-IN`             |
+| **Contact Flow**    | Choose an existing one (e.g., Welcome IVR) |
+| **Routing Profile** | Optional (can be set later)       |
+
+4. Click **“Claim”** to assign the number to your instance
+
+> ☑️ Once claimed, the number becomes active immediately and can be used for inbound calls.
+
+---
+
+## 🔄 **4. Associating Numbers with Contact Flows**
+
+Each phone number must be linked to a **Contact Flow** that controls:
+
+- Greeting message
+- IVR menu
+- Call routing logic
+- Error handling
+
+You can change or update the associated flow anytime:
+1. Go to **Phone Numbers**
+2. Click the number
+3. Select a new **Inbound Contact Flow**
+
+---
+
+## 🎯 **5. Choosing the Right Number Type**
+
+| **Use Case**                        | **Suggested Number Type** |
+|------------------------------------|----------------------------|
+| General Support (national)         | Toll-Free                  |
+| Localized support (regional office)| DID                        |
+| Internal testing/demo              | DID                        |
+| Global helpline                    | Toll-Free (multi-country support) |
+
+> 🌍 For international access, consider **multiple numbers in different countries**, each routed to the same or different contact flows.
+
+---
+
+## 💸 **6. Pricing Considerations**
+
+| **Type**        | **Pricing Basis**                  |
+|-----------------|-------------------------------------|
+| **DID**         | Lower cost; charged per minute      |
+| **Toll-Free**   | Higher cost; you pay for incoming calls |
+
+Other charges may include:
+- Call recording storage (S3)
+- Lambda function execution
+- Lex usage if bots are enabled
+
+You can monitor usage and billing in the **AWS Billing Console**.
+
+---
+
+## 🧠 **Summary**
+
+| **Feature**               | **Details**                                                  |
+|---------------------------|--------------------------------------------------------------|
+| DID Number                | Regular city/region-specific number                          |
+| Toll-Free Number          | Customer can call for free; business pays call charges       |
+| Claiming Process          | Simple, console-based, takes minutes                         |
+| Integration               | Must link to a contact flow to function                      |
+| Region & Compliance       | Varies by country; some may require documentation             |
+
+Claimed numbers are the foundation for voice communication in Amazon Connect. They are easy to manage, can be updated anytime, and give you full flexibility over how customers reach your support teams.
+
+
+
 
