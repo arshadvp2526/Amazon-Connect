@@ -232,3 +232,85 @@ Amazon Connect stores contact trace records (CTRs) and metric data in Amazon S3.
 
 Using Amazon QuickSight with Amazon Connect is an advanced way to turn raw contact center data into meaningful visual intelligence — enabling better decisions, faster.
 
+
+
+### 🔄 Using Amazon Kinesis for Streaming Data in Amazon Connect
+
+Amazon Kinesis is a powerful service that allows real-time streaming of data from Amazon Connect, enabling advanced analytics, monitoring, and data processing workflows.
+
+---
+
+### 🚀 Why Use Kinesis with Amazon Connect?
+
+Kinesis enables you to:
+
+- Stream Contact Trace Records (CTRs) in real-time
+- Monitor customer interactions live
+- Perform near real-time analytics and alerting
+- Feed external systems like data lakes, ML models, or dashboards
+
+---
+
+### 🔧 Setting Up Streaming with Kinesis
+
+1. **Enable Data Streaming in Amazon Connect**
+   - Go to **Amazon Connect Console** → **Data Streaming**
+   - Choose **Kinesis Data Stream** as the destination
+   - Select the data types you want to stream (e.g., Contact Trace Records, Agent Events)
+
+2. **Create a Kinesis Data Stream**
+   - Navigate to the **Kinesis Console**
+   - Create a stream (e.g., `connect-ctr-stream`)
+   - Choose number of shards based on expected traffic volume
+
+3. **Connect Kinesis to Amazon Connect**
+   - In Amazon Connect’s **Data Streaming** section, provide the Kinesis stream ARN
+   - Assign appropriate IAM permissions to Amazon Connect to publish to Kinesis
+
+---
+
+### 🔍 What You Can Stream
+
+| Data Type                | Description                                 |
+|--------------------------|---------------------------------------------|
+| Contact Trace Records    | Full interaction metadata per contact       |
+| Agent Events             | Agent login, logout, status changes         |
+| Contact Events (Contact Lens) | Transcripts, sentiment, interruptions |
+
+---
+
+### 🧠 Common Use Cases
+
+- **Real-time dashboards** using Amazon Kinesis Data Analytics or Amazon QuickSight
+- **Live alerts** when specific patterns are detected (e.g., high queue wait)
+- **Customer journey tracking** across systems
+- **Feeding ML models** for churn prediction or sentiment analysis
+- **Sending data to a data lake** (e.g., Amazon S3 via Firehose)
+
+---
+
+### 🔄 Integration with Other AWS Services
+
+| Service             | Purpose                                      |
+|---------------------|----------------------------------------------|
+| AWS Lambda          | Process and transform streaming data         |
+| Amazon Kinesis Firehose | Stream data to S3, Redshift, or Elasticsearch |
+| Amazon Kinesis Analytics | SQL-based real-time data analysis        |
+| Amazon CloudWatch   | Custom metrics and alerts                    |
+
+---
+
+### ✅ Best Practices
+
+- Use partition keys (e.g., Contact ID) for even data distribution
+- Monitor shard limits and throughput using CloudWatch
+- Retain only needed data duration to optimize cost
+- Secure access using IAM and KMS (if using encryption)
+
+---
+
+### 📌 Sample Architecture
+
+```text
+Amazon Connect ──▶ Kinesis Data Stream ──▶ Lambda Processor ──▶ S3 / Redshift / QuickSight
+
