@@ -3,61 +3,48 @@
 Amazon Connect provides several features to ensure that your contact center meets compliance requirements, protects sensitive data, and remains cost-efficient.
 
 ---
+## **KMS Integration and Encryption of Call Data**
 
-### 🔐 KMS Integration and Encryption of Call Data
+Amazon Connect integrates with AWS Key Management Service (KMS) to secure sensitive customer data, including call recordings and transcripts.
 
-Amazon Connect supports encryption using **AWS Key Management Service (KMS)**, ensuring that sensitive data—such as call recordings and transcripts—are protected both at rest and in transit.
+### 🔐 How KMS Integration Works
+- Encrypts data at rest using KMS.
+- You can use the default AWS-managed key (`aws/connect`) or a Customer Managed Key (CMK).
+- CMKs allow greater control:
+  - Enable key rotation
+  - Define access permissions
+  - Monitor usage with AWS CloudTrail
 
----
+### 🔄 Encrypting Call Recordings
+- When call recording is enabled, the following are encrypted:
+  - Audio recordings (.wav or .mp3)
+  - Contact Lens transcripts (if used)
 
-### 🔧 Enabling KMS for Amazon Connect
+- You can configure the encryption key in:
+  **Amazon Connect Console → Instance Settings → Data Storage → Encryption**
 
-1. **Create or Select a Customer Managed Key (CMK):**
-   - Go to the **KMS Console**
-   - Create a new CMK or use an existing one
-   - Enable key rotation for enhanced security
+### 🔑 KMS Permissions
+Ensure the Amazon Connect instance has access to the selected KMS key.
 
-2. **Attach KMS Key to Amazon Connect:**
-   - In **Amazon Connect Console**, go to **Data Storage**
-   - Under **Call Recordings**, choose to **encrypt with KMS**
-   - Select the desired CMK
-   - Grant permissions to Amazon Connect using an IAM policy
-
----
-
-### 📦 What Gets Encrypted?
-
-| Data Type                  | Encryption Applied? |
-|----------------------------|---------------------|
-| Call Recordings            | ✅ Yes               |
-| Chat Transcripts           | ✅ Yes               |
-| Contact Trace Records (CTRs) | ✅ Yes            |
-| Contact Lens Analytics     | ✅ Yes               |
-
----
-
-### 🔄 How It Works
-
-- When a call is recorded, the audio file is automatically encrypted using the selected KMS key.
-- Only users or services with **Decrypt** permissions on the CMK can access the data.
-- Access logs for key usage are recorded in **AWS CloudTrail** for auditing.
-
----
-
-### 🔐 IAM Permissions Example
-
+**Required service principal:**
 ```json
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Action": [
-        "kms:Encrypt",
-        "kms:Decrypt",
-        "kms:GenerateDataKey"
-      ],
-      "Resource": "arn:aws:kms:region:account-id:key/key-id"
-    }
-  ]
-}
+"Service": "connect.amazonaws.com"
+```
+
+**Required permissions:**
+```json
+[
+  "kms:Encrypt",
+  "kms:Decrypt",
+  "kms:GenerateDataKey",
+  "kms:DescribeKey"
+]
+```
+
+### 📋 Best Practices
+✅ Use CMKs for better access control  
+✅ Enable automatic key rotation  
+✅ Monitor key usage with AWS CloudTrail  
+✅ Limit access to the KMS key only to necessary IAM roles and services  
+
+Implementing KMS ensures encryption compliance and security for all sensitive customer interactions within Amazon Connect.
