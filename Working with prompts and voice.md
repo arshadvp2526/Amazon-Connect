@@ -160,6 +160,66 @@ Amazon Polly supports **SSML**, which allows you to control:
 
 ```xml
 Hello <emphasis>John</emphasis>. Your balance is <break time="500ms"/> $245.
+Use this format when configuring the text in a TTS-enabled Play Prompt block (check the "Use SSML" box).
+
+📋 Best Practices for Applying Prompts
+✅ Use short, clear, and friendly messages
+
+✅ Avoid long menus; break complex flows into subflows
+
+✅ Combine static prompts with TTS where personalization is needed
+
+✅ Always test your flow to ensure prompts play at the correct point
+
+✅ Store and reuse prompts to maintain consistency across flows
+
+Applying prompts correctly in Amazon Connect ensures that your contact flows sound natural, are easy to navigate, and deliver the right information to both customers and agents at the right time.
+
+
+## 🌐 **Creating Multilingual Flows Using Text-to-Speech (TTS)**
+
+Amazon Connect, through its integration with **Amazon Polly**, allows you to create **multilingual contact flows** using **text-to-speech (TTS)** in various supported languages.
+
+---
+
+### 🔧 **Steps to Create a Multilingual Flow**
+
+1. **Determine Customer Language**
+   - Use a **menu block** at the beginning of the contact flow to let customers select their language.
+   - You can also detect language based on **customer input**, **stored attributes**, or **Lambda logic**.
+
+2. **Set a Language Attribute**
+   - After capturing the user's language choice, use the **Set Contact Attributes** block to store the selection (e.g., `language = 'es'` for Spanish).
+
+3. **Route Based on Language**
+   - Use **Check Contact Attributes** or **Branching** logic to route the contact to the correct flow or language section.
+
+4. **Use TTS with Language Code**
+   - In **Play Prompt** blocks, set the appropriate **language voice** supported by Amazon Polly.
+   - Example voices:
+     - English (US): `Joanna`, `Matthew`
+     - Spanish (ES): `Lucia`, `Enrique`
+     - French (FR): `Celine`, `Mathieu`
+     - Hindi (IN): `Aditi`
+   - Make sure the **Text-to-Speech** option is selected, and select the correct **voice and language**.
+
+---
+
+### 🧪 **Sample Flow**
+
+```plaintext
+Main Menu →
+    [Language Selection Menu]
+        1 = English
+        2 = Español
+        3 = Français
+        4 = हिन्दी
+
+Set Contact Attribute (language = 'fr') →
+Check Attribute →
+    If language = 'fr' → Branch to French flow section
+    If language = 'es' → Branch to Spanish flow section
+    ...
 
 
 
