@@ -173,4 +173,63 @@ The **Set Queue Behavior** block is used **before transferring** a contact to a 
 Proper configuration of **Transfer to Queue** and **Set Queue Behavior** ensures smooth routing, reduces customer frustration, and improves first contact resolution.
 
 
+## **Agent Workspace vs. CCP (Contact Control Panel)**
+
+Amazon Connect offers two interfaces for agents to manage contacts: the **Agent Workspace** and the classic **CCP (Contact Control Panel)**. Understanding the differences helps organizations choose the best tool for their workflows.
+
+---
+
+### **Agent Workspace**
+
+**Agent Workspace** is a modern, customizable interface introduced by Amazon Connect to provide a more integrated experience.
+
+**Key Features:**
+- 📋 **Task-based UI**: Manage multiple tasks (calls, chats, tasks) in a single view.
+- 🧠 **Step-by-step guides**: Integrated with **wisdom** or custom workflows.
+- 🔍 **Context-aware interface**: Shows customer info, previous interactions, and recommended actions.
+- 🧩 **Extensibility**: Add custom components using Amazon Connect **UI extensions**.
+- 🔄 **Automatic screen pops** based on customer attributes.
+
+**Ideal For:**
+- Complex use cases
+- Organizations needing unified agent tools
+- Multi-channel handling (chat, voice, tasks)
+
+---
+
+### **CCP (Contact Control Panel)**
+
+The **CCP** is the classic dialer-like interface used for basic contact handling.
+
+**Key Features:**
+- 📞 Simple call controls: Accept, hold, transfer, and end call.
+- 🔁 Transfer to queue or agent
+- ✅ Lightweight and easy to embed into CRM systems
+- ⛔ No task or workflow automation
+
+**Ideal For:**
+- Basic call center needs
+- Embedding inside other tools (like Salesforce or Zendesk)
+- Lightweight deployments
+
+---
+
+### **Comparison Table**
+
+| Feature                         | Agent Workspace            | CCP (Contact Control Panel) |
+|-------------------------------|----------------------------|-----------------------------|
+| Interface Type                | Full dashboard             | Lightweight widget          |
+| Task Management               | Yes                        | No                          |
+| Chat & Voice Support          | Yes                        | Voice only                  |
+| Customization & Extensions    | High (with APIs & UI apps) | Limited                     |
+| Screen Pops & Automation      | Yes                        | No                          |
+| Ideal Use Case                | Complex, modern workflows  | Simple voice-only tasks     |
+
+---
+
+### **Best Practice Tip**
+Start with **Agent Workspace** if you want a scalable, modern solution with full visibility and control. Use **CCP** only when a minimal voice interface is sufficient.
+
+
+
 
