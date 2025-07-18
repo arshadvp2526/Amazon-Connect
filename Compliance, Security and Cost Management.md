@@ -156,6 +156,58 @@ Activate tags in the **Billing → Cost Allocation Tags** section.
 
 
 
+## Common Billing Pitfalls and Best Practices
+
+Understanding common billing mistakes in Amazon Connect can help avoid unexpected charges and ensure cost efficiency.
+
+### ⚠️ Common Pitfalls
+
+#### 1. Unused Phone Numbers
+- Leaving phone numbers provisioned but unused still incurs charges.
+- Always release numbers that are no longer needed.
+
+#### 2. Idle Agents Logged In
+- Agents logged into the Contact Control Panel (CCP) but not handling calls may generate idle usage charges.
+- Encourage agents to log out when not active.
+
+#### 3. Oversized Call Recordings
+- Long call recordings and Contact Lens transcripts can increase storage costs.
+- Set up retention policies or lifecycle rules to delete/archive old data.
+
+#### 4. Overuse of Contact Lens
+- Contact Lens provides valuable insights but has associated costs.
+- Use it strategically, enabling only for selected queues or use cases.
+
+#### 5. Misconfigured Queues and Flows
+- Complex or looping contact flows can increase call duration, inflating telephony charges.
+- Always test flows thoroughly and simplify logic where possible.
+
+#### 6. Lack of Budget Alerts
+- Not setting budgets means no early warning when spending trends upward.
+- Use AWS Budgets for proactive notifications.
+
+---
+
+### ✅ Best Practices
+
+✅ **Monitor Usage Regularly**  
+Use AWS Cost Explorer and detailed billing reports to review daily or monthly trends.
+
+✅ **Set Up Budgets**  
+Create cost budgets with alerts to avoid surprise charges.
+
+✅ **Use Tags**  
+Apply consistent cost allocation tags for resource-level insights.
+
+✅ **Review Resource Inventory**  
+Audit active phone numbers, flows, and agents regularly.
+
+✅ **Enable Lifecycle Rules**  
+Set S3 lifecycle policies to delete or transition old recordings/transcripts to cheaper storage.
+
+✅ **Train Staff**  
+Educate agents and administrators on best practices for efficient Connect usage.
+
 
 
 
