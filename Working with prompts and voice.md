@@ -157,6 +157,8 @@ Amazon Polly supports **SSML**, which allows you to control:
 - **Language switching**
 
 **Example:**
+```xml
+Hello <emphasis>John</emphasis>. Your balance is <break time="500ms"/> $245.
 Hello <emphasis>John</emphasis>. Your balance is <break time="500ms"/> $245.
 Use this format when configuring the text in a TTS-enabled Play Prompt block (check the "Use SSML" box).
 
