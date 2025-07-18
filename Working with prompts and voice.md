@@ -167,5 +167,13 @@ Use this format when configuring the text in a **TTS-enabled Play Prompt** block
 
 ---
 
+### 📋 Best Practices for Applying Prompts
 
+✅ Use short, clear, and friendly messages  
+✅ Avoid long menus; break complex flows into subflows  
+✅ Combine static prompts with TTS where personalization is needed  
+✅ Always test your flow to ensure prompts play at the correct point  
+✅ Store and reuse prompts to maintain consistency across flows  
+
+Applying prompts correctly in Amazon Connect ensures that your contact flows **sound natural**, are **easy to navigate**, and deliver the **right information** to both customers and agents at the right time.
 
