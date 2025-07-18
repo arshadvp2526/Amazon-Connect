@@ -139,7 +139,27 @@ To play a message — either a pre-recorded file or dynamic text — at any poin
 You can personalize prompts using **contact attributes** within TTS.
 
 **Example:**
+Hello, {CustomerName}. Your order number is {OrderID}.
 
+Use these dynamic values inside Play Prompt blocks with text-to-speech enabled. The values must be set earlier in the contact flow using:
+- **Set Contact Attributes**
+- **Invoke AWS Lambda**
+- **Customer input blocks**
+
+---
+
+## ✨ **4. Enhancing Prompts with SSML (Speech Synthesis Markup Language)**
+
+Amazon Polly supports **SSML**, which allows you to control:
+- **Pauses**: `<break time="1s"/>`
+- **Emphasis**: `<emphasis level="strong">important</emphasis>`
+- **Speech rate & pitch**
+- **Language switching**
+
+**Example:**
+
+```xml
+Hello <emphasis>John</emphasis>. Your balance is <break time="500ms"/> $245.
 
 
 
