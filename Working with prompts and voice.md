@@ -177,3 +177,66 @@ Use this format when configuring the text in a **TTS-enabled Play Prompt** block
 
 Applying prompts correctly in Amazon Connect ensures that your contact flows **sound natural**, are **easy to navigate**, and deliver the **right information** to both customers and agents at the right time.
 
+
+### 🌐 Creating Multilingual Flows Using Text-to-Speech
+
+Amazon Connect allows you to build multilingual contact flows using **Text-to-Speech (TTS)** powered by **Amazon Polly**, which supports dozens of languages and voices.
+
+---
+
+### 🔧 Steps to Create a Multilingual Flow
+
+1. **Identify Language Preferences**
+   - Capture the customer’s preferred language using:
+     - Menu options (e.g., "Press 1 for English, 2 for Spanish")
+     - Stored customer profile attributes
+     - Lambda function lookups
+
+2. **Set Contact Attributes**
+   - Use the **Set Contact Attributes** block to assign a value like:
+     ```text
+     Language = "en-US"
+     ```
+     or
+     ```text
+     Language = "es-ES"
+     ```
+
+3. **Use Play Prompt Blocks with TTS**
+   - In **Play Prompt**, enable **Text-to-Speech**.
+   - Choose the appropriate **language and voice**.
+   - Insert the message to be spoken in the selected language.
+   - Example:
+     ```text
+     Thank you for calling. Please hold while we connect you to an agent.
+     ```
+
+4. **Branch Logic Based on Language**
+   - Use the **Check Contact Attribute** block to check the value of `Language`.
+   - Route the call to different flows or prompts accordingly.
+
+---
+
+### 🌍 Example Language Codes (Amazon Polly)
+
+| Language      | Code    | Voice Examples     |
+|---------------|---------|--------------------|
+| English (US)  | en-US   | Joanna, Matthew    |
+| Spanish (ES)  | es-ES   | Conchita, Enrique  |
+| French (FR)   | fr-FR   | Celine, Mathieu    |
+| Hindi (IN)    | hi-IN   | Aditi               |
+| German (DE)   | de-DE   | Hans, Marlene      |
+
+---
+
+### 🛠 Tips for Multilingual Flow Design
+
+- ✅ Store messages in a central location or external service if scaling to many languages
+- ✅ Always test each language flow thoroughly
+- ✅ Use SSML to ensure correct pronunciation, pauses, and emphasis in different languages
+- ✅ If using Lambda, structure responses to return language-specific text
+
+---
+
+Creating multilingual flows helps deliver a personalized and inclusive experience to customers from diverse linguistic backgrounds.
+
