@@ -126,3 +126,51 @@ This means the agent will first get contacts from `PremiumSupport`. If there are
 Routing profiles help you **control agent workload**, ensure **timely responses**, and maintain **efficient queue management**.
 
 
+## **Transfer to Queue and Set Queue Behavior**
+
+### **Transfer to Queue**
+
+The **Transfer to Queue** block in Amazon Connect contact flows is used to route a contact to a specific queue. This allows the system to place the contact into a waiting state until an available agent from that queue can answer.
+
+**Common Use Cases:**
+- Route customers to specialized departments (e.g., billing, tech support).
+- Send calls to language-specific queues.
+- Re-route based on customer input or data from Lambda functions.
+
+**Configuration Fields:**
+- **Queue**: Choose the specific queue the contact should be transferred to.
+- **Timeout**: Define how long to wait before failing over.
+- **At Capacity Handling**: Set behavior when the queue is full.
+- **Callback**: Enable if the customer should be offered a callback instead of waiting.
+
+---
+
+### **Set Queue Behavior**
+
+The **Set Queue Behavior** block is used **before transferring** a contact to a queue to define how that queue should behave for this particular contact.
+
+**Settings in this Block:**
+
+| Option                    | Description                                                                 |
+|---------------------------|-----------------------------------------------------------------------------|
+| **Disconnect when queue is full** | Ends the call if no agents are available and the queue is at capacity.    |
+| **Offer callback**               | Offers the customer a callback instead of waiting in the queue.          |
+| **Timeout behavior**             | What happens when a contact waits in queue longer than the defined time. |
+
+**Example Flow Sequence:**
+1. Set customer attributes.
+2. Use **Set Queue Behavior** to define queue rules.
+3. Use **Transfer to Queue** to place contact in queue.
+
+---
+
+### **Best Practices**
+- Always configure fallback logic in case the queue is full or times out.
+- Use **dynamic routing** by setting queue values via Lambda or attributes.
+- Combine **Set Queue Behavior** with **Customer Queue Flow** for a customized experience.
+- Test different scenarios (e.g., no agent, full queue, long wait times).
+
+Proper configuration of **Transfer to Queue** and **Set Queue Behavior** ensures smooth routing, reduces customer frustration, and improves first contact resolution.
+
+
+
