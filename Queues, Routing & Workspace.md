@@ -232,4 +232,52 @@ Start with **Agent Workspace** if you want a scalable, modern solution with full
 
 
 
+## **Quick Connect Configuration**
 
+**Quick Connects** in Amazon Connect are shortcuts used to simplify and speed up call transfers. They allow agents to easily route contacts to another agent, a queue, an external number, or a flow—without having to remember long numbers or perform manual steps.
+
+---
+
+### 🔹 **Types of Quick Connects**
+
+| Type              | Description                                                                 |
+|-------------------|-----------------------------------------------------------------------------|
+| **User**          | Directs the contact to a specific agent (logged in to Connect).            |
+| **Queue**         | Transfers the contact to a queue, placing them in line for the next agent. |
+| **Phone Number**  | Transfers the contact to an external number (e.g., another call center).   |
+| **Flow**          | Transfers the contact to a specific contact flow within Amazon Connect.    |
+
+---
+
+### 🔧 **Creating a Quick Connect**
+
+1. **Go to** the Amazon Connect admin console.
+2. Navigate to **Routing** > **Quick Connects**.
+3. Click **“Add new Quick Connect.”**
+4. **Select the type** of quick connect you want to create (User, Queue, Phone number, or Flow).
+5. Fill in the required details:
+   - **Name**
+   - **Destination**
+   - Optional: Description or tags for easier management.
+6. Click **“Create.”**
+
+---
+
+### 💡 **Using Quick Connects in Contact Flows**
+
+- Use the **Transfer to Quick Connect** block in your contact flow.
+- Choose from the list of existing Quick Connects.
+- This allows dynamic routing based on predefined transfer options.
+
+---
+
+### ✅ **Best Practices**
+
+- **Name clearly**: Use intuitive names like "Sales Team Queue" or "Support Agent John".
+- **Group logically**: Organize Quick Connects by department or function.
+- **Regularly review**: Remove unused Quick Connects to avoid clutter.
+- **Test**: Always test new Quick Connects in staging before applying in production flows.
+
+---
+
+Quick Connects empower agents to quickly transfer calls with accuracy and improve the customer experience by reducing wait and transfer times.
