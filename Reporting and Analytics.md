@@ -75,3 +75,84 @@ Amazon Connect tracks performance using two main metric types:
 ---
 
 Leveraging Contact Lens and metrics ensures your Amazon Connect contact center is data-driven, responsive, and continuously improving.
+
+### **📊 Real-time and Historical Metrics**
+
+Amazon Connect provides powerful tools to monitor your contact center performance through **Real-time** and **Historical** metrics. Understanding both helps you manage day-to-day operations and make strategic decisions based on data.
+
+---
+
+### 🔄 **Real-time Metrics**
+
+Real-time metrics give an immediate view of what's happening in your contact center. These metrics are ideal for supervisors who need to respond quickly to sudden changes in workload or agent availability.
+
+**Examples of real-time metrics:**
+
+| Metric                   | Description                                                       |
+|--------------------------|-------------------------------------------------------------------|
+| Contacts in queue        | Number of customers waiting to be connected to an agent           |
+| Agents online            | Agents who are logged in and available                            |
+| Contacts answered        | Number of calls being answered at the moment                      |
+| Longest time in queue    | Maximum wait time of any contact currently in queue               |
+| Service level            | % of contacts answered within a defined threshold (e.g., 20 sec)  |
+
+**Where to access:**
+- Amazon Connect Console → **Analytics and Optimization** → **Real-time metrics**
+
+**Use cases:**
+- Monitor traffic spikes
+- Redirect calls or agents
+- Ensure SLAs are being met in real time
+
+---
+
+### 🕒 **Historical Metrics**
+
+Historical metrics offer detailed insights into past performance, helping you understand trends, assess agent performance, and forecast future needs.
+
+**Examples of historical metrics:**
+
+| Metric                   | Description                                                       |
+|--------------------------|-------------------------------------------------------------------|
+| Average Handle Time      | Time spent per contact including talk, hold, and wrap-up          |
+| Abandonment Rate         | % of contacts that disconnected before reaching an agent          |
+| First Contact Resolution | % of contacts resolved without a follow-up                        |
+| Agent Utilization        | % of logged-in time agents spend handling contacts                |
+| Contact volume           | Total number of contacts received over a time period              |
+
+**Where to access:**
+- Amazon Connect Console → **Analytics and Optimization** → **Historical metrics**
+
+**Use cases:**
+- Create performance reports
+- Identify recurring issues
+- Evaluate staffing effectiveness
+- Plan schedules and forecasts
+
+---
+
+### 🛠️ **Customizing Metrics Reports**
+
+You can filter and customize both real-time and historical reports by:
+
+- **Queue**
+- **Agent**
+- **Channel (Voice/Chat)**
+- **Time range**
+- **Contact attributes**
+
+You can also **export** data in CSV format for analysis in Excel or BI tools.
+
+---
+
+### ✅ **Best Practices**
+
+- Review real-time dashboards during active hours
+- Use historical metrics weekly/monthly to assess KPIs
+- Align historical trends with quality management (QA) reviews
+- Combine with **Contact Lens insights** for deeper understanding
+
+---
+
+By actively using both real-time and historical metrics, your Amazon Connect contact center can stay agile and continuously optimize performance.
+
