@@ -313,4 +313,10 @@ Kinesis enables you to:
 
 ```text
 Amazon Connect ──▶ Kinesis Data Stream ──▶ Lambda Processor ──▶ S3 / Redshift / QuickSight
+Kinesis acts as the central hub to stream and route contact center data to any AWS or external analytics platform.
+
+Amazon Kinesis enhances Amazon Connect’s capabilities by making real-time contact data available for deeper analysis, automation, and improved decision-making.
+
+
+
 
