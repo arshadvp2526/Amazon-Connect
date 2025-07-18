@@ -97,6 +97,65 @@ Role-Based Access Control (RBAC) in Amazon Connect is implemented through AWS Id
 - **Amazon Connect Console → Security Profile Settings**: Define access for users in the Connect instance
 
 
+## Budget Setup and Cost Tracking
+
+Amazon Connect allows you to monitor and manage costs effectively using AWS Budgets, Cost Explorer, and tagging strategies.
+
+### 💰 Setting Up a Budget
+
+AWS Budgets lets you create custom budget thresholds and alerts.
+
+#### 📍 Steps:
+
+1. Go to **AWS Billing Console → Budgets**
+2. Click **Create budget**
+3. Choose **Cost budget**
+4. Define the period (monthly, quarterly, etc.)
+5. Set your budget amount
+6. Configure alerts via email or SNS
+
+This helps ensure you are notified when spending exceeds expectations.
+
+### 📊 Using AWS Cost Explorer
+
+Cost Explorer provides detailed insights into your AWS usage.
+
+- Analyze usage by **service**, **linked account**, or **tag**
+- Filter for **Amazon Connect** specifically
+- View **daily, monthly, or custom range** trends
+
+### 🏷️ Tagging for Cost Allocation
+
+Use **cost allocation tags** to organize and track Connect resources by:
+
+- Team
+- Department
+- Project
+- Environment (e.g., dev, staging, prod)
+
+Tags help you slice and report costs more effectively.
+
+#### Example tag format:
+
+    Key: Project
+    Value: CustomerSupport
+
+Activate tags in the **Billing → Cost Allocation Tags** section.
+
+### 🔄 Forecast and Adjust
+
+- Enable **forecasting** in AWS Budgets to predict future spending
+- Reallocate or adjust usage to stay within budget
+
+### ✅ Best Practices
+
+✅ Set up **email alerts** for approaching limits  
+✅ Use **resource tags** consistently  
+✅ Regularly review usage in **Cost Explorer**  
+✅ Forecast trends and optimize resource use proactively
+
+
+
 
 
 
