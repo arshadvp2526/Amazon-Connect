@@ -156,3 +156,79 @@ You can also **export** data in CSV format for analysis in Excel or BI tools.
 
 By actively using both real-time and historical metrics, your Amazon Connect contact center can stay agile and continuously optimize performance.
 
+
+### 📈 Creating Custom Reports with Amazon QuickSight (Optional)
+
+Amazon QuickSight is a scalable business intelligence (BI) service you can use to create custom dashboards and visualizations from your Amazon Connect data. While optional, integrating QuickSight with Amazon Connect can provide deeper insights and make reporting more interactive and visual.
+
+---
+
+### 🔗 **How It Works with Amazon Connect**
+
+Amazon Connect stores contact trace records (CTRs) and metric data in Amazon S3. These datasets can be queried and visualized in QuickSight using:
+
+- **AWS Glue** to catalog data
+- **Amazon Athena** to run queries
+- **QuickSight** to build dashboards from query results
+
+---
+
+### 🧰 **Steps to Set Up Reporting with QuickSight**
+
+1. **Enable Data Streaming to Amazon S3**
+   - In Amazon Connect → Go to *Data Streaming*
+   - Enable streaming of Contact Trace Records (CTRs)
+
+2. **Catalog the Data with AWS Glue**
+   - Create a Glue Crawler to scan your S3 bucket and generate a schema
+
+3. **Query with Amazon Athena**
+   - Use Athena to write SQL queries against the CTR data
+   - Example:
+     ```sql
+     SELECT agent_username, queue_name, disconnect_reason, contact_duration
+     FROM connect_contact_trace_records
+     WHERE contact_date BETWEEN DATE '2025-07-01' AND DATE '2025-07-15'
+     ```
+
+4. **Connect Athena to Amazon QuickSight**
+   - Open QuickSight and add Athena as a data source
+   - Import query results as a dataset
+
+5. **Create Visuals and Dashboards**
+   - Use charts, graphs, pivot tables, and filters to build a dynamic dashboard
+   - Share reports with stakeholders securely within your organization
+
+---
+
+### 📊 **What You Can Visualize**
+
+| Metric/Dimension        | Example Visuals                          |
+|-------------------------|------------------------------------------|
+| Contact Volume by Day   | Line Chart showing call trends           |
+| Agent Performance       | Bar Graph of AHT or contact counts       |
+| Queue Abandonment Rate  | Pie Chart or KPI summary                 |
+| Disconnect Reasons      | Table with filters                       |
+| SLA Adherence           | Gauge Chart showing service levels       |
+
+---
+
+### 🛡️ **Permissions & Access Control**
+
+- QuickSight supports IAM roles and group-based access
+- You can restrict dataset access to specific users
+- Row-level security (RLS) is available for fine-grained controls
+
+---
+
+### ✅ **Best Practices**
+
+- Keep CTR datasets clean and organized by time (partitioned)
+- Use descriptive naming for Glue tables and Athena queries
+- Schedule data refreshes to keep dashboards up to date
+- Combine QuickSight with Contact Lens for deep sentiment and transcript analytics
+
+---
+
+Using Amazon QuickSight with Amazon Connect is an advanced way to turn raw contact center data into meaningful visual intelligence — enabling better decisions, faster.
+
